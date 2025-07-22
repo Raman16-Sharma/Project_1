@@ -59,7 +59,7 @@ input_data = [sepal_length, sepal_width, petal_length, petal_width]
 
 # Make prediction via Flask API
 try:
-    response = requests.post("https://project-1-w9w7.onrender.com/predict", json={"features": input_data})
+    response = requests.post("https://streamlit-plus-flask-and-render.onrender.comgit", json={"features": input_data})
 
     if response.status_code == 200:
         result = response.json()

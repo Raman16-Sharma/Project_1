@@ -57,9 +57,12 @@ with col2:
 # Input data to send to Flask
 input_data = [sepal_length, sepal_width, petal_length, petal_width]
 
+# ✅ Local Flask URL instead of Render
+FLASK_URL = "http://127.0.0.1:5000/predict"
+
 # Make prediction via Flask API
 try:
-    response = requests.post("https://streamlit-plus-flask-and-render.onrender.com/predict",json={"features": input_data})
+    response = requests.post(FLASK_URL, json={"features": input_data})
 
     if response.status_code == 200:
         result = response.json()
